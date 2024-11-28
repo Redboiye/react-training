@@ -17,7 +17,9 @@ export const HelloWorld = (props) => {
         setCount(count + 1)
     }
     const decrementCount = () => {
-        setCount(count - 1)
+        if (count > 0   ) {
+            setCount(count - 1)
+        }
     }
     const refreshCount = () => {
         setCount(0)
@@ -29,6 +31,7 @@ export const HelloWorld = (props) => {
     } else {
         emoji = "😭"
     }
+
 
     return (
         <div>
