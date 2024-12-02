@@ -1,0 +1,17 @@
+.keypad {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.keypad-button {
+  width: 25%;
+  padding: 30px;
+  font-size: 1.5em;
+  cursor: pointer;
+  border: 1px solid #444;
+  background-color: #f0f0f0;
+}
+
+.keypad-button:active {
+  background-color: #ddd;
+}

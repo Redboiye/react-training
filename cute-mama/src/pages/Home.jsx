@@ -1,6 +1,8 @@
 import {useEffect, useState} from "react";
+import {NavigationBar} from "../components/NavigationBar";
+import '../styles/Home.css'
 
-export const HelloWorld = (props) => {
+export const Home = (props) => {
     const [count, setCount] = useState(0)
     let emoji = null
     useEffect(() => {
@@ -17,7 +19,7 @@ export const HelloWorld = (props) => {
         setCount(count + 1)
     }
     const decrementCount = () => {
-        if (count > 0   ) {
+        if (count > 0) {
             setCount(count - 1)
         }
     }
@@ -35,6 +37,9 @@ export const HelloWorld = (props) => {
 
     return (
         <div>
+            <NavigationBar/>
+
+
             <h1>Hello {props.name}</h1>
             <p>Like Count {count}</p>
             <button onClick={incrementCount}>Give Like</button>
