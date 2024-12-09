@@ -2,12 +2,12 @@ import '../styles/KeyPad.css'
 
 export const KeyPad = ({onButtonClick}) => {
     const buttons = [
-        "%", "CE", "C","X",
+        "%", "CE", "C", "*",
         "7", "8", "9", "/",
         "4", "5", "6", "+",
         "1", "2", "3", "-",
-             "0", ".",
-                "=",
+        "0", ".",
+        "=",
 
     ]
     return (

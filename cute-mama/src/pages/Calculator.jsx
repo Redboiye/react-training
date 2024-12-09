@@ -9,6 +9,9 @@ export const Calculator = () => {
     const handleButtonClick = (value) => {
 
         if (value === "=") {
+            if (!input || /[+\-*/]$/.test(input)) {
+                return;
+            }
             calculateResult();
         } else if (value === "CE") {
             setInput("")
@@ -23,24 +26,23 @@ export const Calculator = () => {
             } else {
                 setInput(input + value)
             }
-
-        }else if (/[+\-*/]/.test(value)) {
+        } else if (/[+\-*/]/.test(value)) {
             const lastChar = input.slice(-1)
             if (/[+\-*/]/.test(lastChar)) {
                 setInput(input.slice(0, -1) + value);
             } else {
                 setInput(input + value)
             }
-        }
-        else {
+        } else {
             setInput(input + value)
         }
     }
 
     const calculateResult = () => {
-        try {
 
-            let result = eval(input);
+        try {
+            const sanitizedInput = input.replace(/[+\-*/]$/, "")
+            let result = eval(sanitizedInput);
             setInput(result)
             console.log(result)
             if (result === Infinity || result === -Infinity) {
