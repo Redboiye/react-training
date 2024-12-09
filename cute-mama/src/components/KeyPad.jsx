@@ -22,3 +22,5 @@ export const KeyPad = ({onButtonClick}) => {
         </div>
     )
 }
+
+// onButtonClick ir event ieks button

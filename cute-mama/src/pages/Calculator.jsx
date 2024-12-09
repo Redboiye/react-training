@@ -5,8 +5,8 @@ import {KeyPad} from "../components/KeyPad";
 
 
 export const Calculator = () => {
-    const [input, setInput] = useState("")
-    const handleButtonClick = (value) => {
+    const [input, setInput] = useState("") //galvena funkcija kas atgriez stateful value(input) un funkcija kas to inputu atjaunina, "" default value
+    const handleButtonClick = (value) => { //() funkcijas arguments, value ir tas kas atgriezas no KeyPad ka props. value ir ka arguments.
 
         if (value === "=") {
             if (!input || /[+\-*/]$/.test(input)) {
@@ -42,10 +42,10 @@ export const Calculator = () => {
 
         try {
             const sanitizedInput = input.replace(/[+\-*/]$/, "")
-            let result = eval(sanitizedInput);
+            let result = eval(sanitizedInput); //eval aritmetiskas operacijas(tikai javascripta)
             setInput(result)
-            console.log(result)
-            if (result === Infinity || result === -Infinity) {
+            console.log(result) //debugging ir atkludosana kadas vertibas un vertibas tiek padota cauri kodam ieks majas lapas consoles.
+            if (result === Infinity || result === -Infinity) { //infinity var izmantot range
                 setInput("Cannot divide by zero")
             }
         } catch (error) {
@@ -69,3 +69,5 @@ export const Calculator = () => {
 
     )
 }
+
+// props handleButtonClick
